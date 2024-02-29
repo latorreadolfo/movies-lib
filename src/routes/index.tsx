@@ -9,7 +9,6 @@ import dark from "../styles/themes/dark";
 
 const InitRoutes = () => {
   const [theme, setTheme] = useState(light);
-  console.log(theme.title);
 
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
