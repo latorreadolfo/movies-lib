@@ -10,6 +10,8 @@ export default createGlobalStyle`
 
 body {
     font-family: sans-serif;
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
 }
 
 html, body, #root {

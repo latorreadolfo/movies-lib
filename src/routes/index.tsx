@@ -1,22 +1,36 @@
-import React from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Search, Movie } from "../pages";
 import { Navbar, Footer } from "../components";
 import GlobalStyle from "../styles/globalStyles";
+import { ThemeProvider } from "styled-components";
+import light from "../styles/themes/light";
+import dark from "../styles/themes/dark";
 
-function InitRoutes() {
+const InitRoutes = () => {
+  const [theme, setTheme] = useState(light);
+  console.log(theme.title);
+
+  const toggleTheme = () => {
+    setTheme(theme.title === "light" ? dark : light);
+  };
+
   return (
     <Router>
-      <GlobalStyle />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/movie:id" element={<Movie />} />
-      </Routes>
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Navbar toggleTheme={toggleTheme} />
+        {/* <body> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/movie:id" element={<Movie />} />
+        </Routes>
+        {/* </body> */}
+        <Footer />
+      </ThemeProvider>
     </Router>
   );
-}
+};
 
 export default InitRoutes;

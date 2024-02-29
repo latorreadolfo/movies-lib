@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 
 export const Nav = styled.nav`
-  background: #101522;
+  background: ${(props) => props.theme.colors.primary};
   height: 80px;
   display: flex;
   justify-content: center;
@@ -19,15 +19,17 @@ export const NavbarWrapper = styled(Container)`
   display: flex;
   justify-content: space-between;
   height: 80px;
+  align-items: center;
 
   ${Container}
 `;
 
 export const NavLogo = styled(Link)`
-  color: #fff;
   justify-self: flex-start;
   cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
   text-decoration: none;
+  color: ${(props) => props.theme.colors.text};
   font-size: 2rem;
   display: flex;
   align-items: center;
@@ -35,4 +37,15 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled(BiCameraMovie)`
   margin-right: 0.5rem;
+  font-size: 70px;
+`;
+
+export const LightBulbIcon = styled.div`
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
