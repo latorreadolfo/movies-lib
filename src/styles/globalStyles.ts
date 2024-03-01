@@ -24,6 +24,21 @@ button {
 }
 `;
 
+export const Button = styled.button`
+  border-radius: 4px;
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
+  font-size: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 export const Container = styled.div`
   z-index: 1;
   width: 100%;

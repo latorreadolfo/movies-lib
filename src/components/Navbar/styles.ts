@@ -40,6 +40,19 @@ export const NavIcon = styled(BiCameraMovie)`
   font-size: 70px;
 `;
 
+export const RightSideWrapper = styled.div`
+  display: flex;
+  max-width: 500px;
+  align-items: center;
+`;
+
+export const SearchInput = styled.input`
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  height: 30px;
+`;
+
 export const LightBulbIcon = styled.div`
   font-size: 30px;
   cursor: pointer;
@@ -48,4 +61,8 @@ export const LightBulbIcon = styled.div`
   &:hover {
     transform: scale(1.2);
   }
+`;
+
+export const SearchIcon = styled(BiSearchAlt2)`
+  margin-right: 0.5rem;
 `;
